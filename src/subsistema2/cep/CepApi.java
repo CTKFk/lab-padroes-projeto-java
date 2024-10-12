@@ -4,6 +4,10 @@ public class CepApi {
 
 	private static CepApi instancia = new CepApi();
 
+    public static void setInstancia(CepApi instancia) {
+        CepApi.instancia = instancia;
+    }
+
 	private CepApi() {
 		super();
 	}

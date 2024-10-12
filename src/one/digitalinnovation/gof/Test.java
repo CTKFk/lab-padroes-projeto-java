@@ -13,30 +13,37 @@ import one.digitalinnovation.gof.strategy.Robo;
 public class Test {
 
 	public static void main(String[] args) {
-		
+		testSingleton();
+		testStrategy();
+		testFacade();
+	}
+
+	private static void testSingleton() {
 		// Singleton
-		
+
 		SingletonLazy lazy = SingletonLazy.getInstancia();
 		System.out.println(lazy);
 		lazy = SingletonLazy.getInstancia();
 		System.out.println(lazy);
-		
+
 		SingletonEager eager = SingletonEager.getInstancia();
 		System.out.println(eager);
 		eager = SingletonEager.getInstancia();
 		System.out.println(eager);
-		
+
 		SingletonLazyHolder lazyHolder = SingletonLazyHolder.getInstancia();
 		System.out.println(lazyHolder);
 		lazyHolder = SingletonLazyHolder.getInstancia();
 		System.out.println(lazyHolder);
-		
+	}
+
+	private static void testStrategy() {
 		// Strategy
-		
+
 		Comportamento defensivo = new ComportamentoDefensivo();
 		Comportamento normal = new ComportamentoNormal();
 		Comportamento agressivo = new ComportamentoAgressivo();
-		
+
 		Robo robo = new Robo();
 		robo.setComportamento(normal);
 		robo.mover();
@@ -47,11 +54,13 @@ public class Test {
 		robo.mover();
 		robo.mover();
 		robo.mover();
-		
+	}
+
+	private static void testFacade() {
 		// Facade
-		
+
 		Facade facade = new Facade();
 		facade.migrarCliente("Venilton", "14801788");
 	}
-
 }
+// No additional code needed at this point. The main method already calls the test methods for Singleton, Strategy, and Facade patterns.

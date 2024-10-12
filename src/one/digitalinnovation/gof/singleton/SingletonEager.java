@@ -8,6 +8,10 @@ package one.digitalinnovation.gof.singleton;
 public class SingletonEager {
 
 	private static SingletonEager instancia = new SingletonEager();
+
+    public static void setInstancia(SingletonEager instancia) {
+        SingletonEager.instancia = instancia;
+    }
 	
 	private SingletonEager() {
 		super();
